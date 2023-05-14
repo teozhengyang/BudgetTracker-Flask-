@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+<!-- webpage title shown on tab -->
+{% block title%}Main Page{% endblock %}
+
+<!-- webpage body main content -->
+{% block main %}
+    <!-- total net worth  goals section -->
+    <div id="index">
+        <div class="networthdiv">
+            <!-- table name -->
+            <div>
+                <h2>Net Worth</h2>
+            </div>
+            <!-- net worth components table -->
+            <div>
+                <div>
+                    <h5>Components</h5>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="networthcomponents">Components</th>
+                            <th class="networthpercent">Percentage</th>
+                            <th class="networthamount">Amount</th>
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td class="networthcomponents">Budget</td>
+                            <td class="networthpercent">{{ budgetpercent }}%</td>
+                            <td class="networthamount">${{ user_info[0]["budget"]}}</td>
+                        </tr>
+                        <tr>
+                            <td class="networthcomponents">Savings</td>
+                            <td class="networthpercent">{{ savingspercent }}%</td>
+                            <td class="networthamount">${{ user_info[0]["savings"] }}</td>
+                        </tr>
+                        <tr>
+                            <td class="networthcomponents">Investments</td>
+                            <td class="networthpercent">{{ investmentspercent }}%</td>
+                            <td class="networthamount">${{ user_info[0]["investments"] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- total net worth table -->
+            <div>
+                <div>
+                    <h5>Total</h5>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="networthcomponents">Total</th>
+                            <th></th>
+                            <th class="networthamount">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="networthcomponents">Net Worth</td>
+                            <td></td>
+                            <td class="networthamount">${{ user_info[0]["net_worth"] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="goalsdiv">
+            <!-- display user's goals, target, remaining amount towards goals -->
+            <h2>Goals</h2>
+            <form action="/setgoal" method="GET">
+            <div>
+                {% for goal in goals %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="goalsdescription">{{ goal['description'] }}</th>
+                            <th class="goalsamount">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td class="goalsdescription">Target</td>
+                            <td class="goalsamount">${{ goal['amount']}}</td>
+                        </tr>
+                            <td class="goalsdescription">Remaining</td>
+                            <td class="goalsamount">${{ goal['remaining_progress']}}</td>
+                        <tr>
+                    </tbody>
+                </table>
+                <!-- current progress of user -->
+                <p>Progress: {{ goal['current_progress']}}%</p>
+                {% if goal['completed_goal'] %}
+                    <p>You have achieved the goal!</p>
+                {% endif %}
+                <!-- delete and achieved goal buttons -->
+                <div>
+                    <form method="GET">
+                        <input type="hidden" name="id" value="{{goal['id']}}">
+                        <button formaction="/editgoal">Edit Goal</button>
+                        <button formaction="/deletegoal">Delete/Achieved Goal</button>
+                    </form>
+                </div>
+            </form>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

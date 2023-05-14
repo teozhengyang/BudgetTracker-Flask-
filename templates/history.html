@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+<!-- webpage title shown on tab -->
+{% block title%}History{% endblock %}
+
+<!-- webpage body main content -->
+{% block main %}
+    <h3 id="historytablename">Recent Transactions</h3>
+    <!-- table for all transactions -->
+    <div class="history">
+    <table id="historytable">
+        <!-- table headers -->
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <!-- table content -->
+        <tbody>
+            {% for transaction in history %}
+                <tr>
+                    <!-- transaction type (income, transfer, expense) -->
+                    <td>{{ transaction['type'] }}</td>
+                    <!-- transaction source (budget, savings, investments, income, others) -->
+                    <td>{{ transaction['source'] }}</td>
+                    <!-- transaction destination (budget, savings, investments, expenses)  -->
+                    <td>{{ transaction['destination'] }}</td>
+                    <!-- transaction description -->
+                    <td>{{ transaction['description'] }}</td>
+                    <!-- transaction amount -->
+                    <td>${{ transaction['amount'] }}</td>
+                    <!-- transaction date -->
+                    <td>{{ transaction['date'] }}</td>
+                    <td>
+                        <!-- form to delete transaction -->
+                        <form method="POST">
+                            <!-- transaction info needed to delete transaction -->
+                            <input name="id" type="hidden" value="{{transaction['id']}}">
+                            <input name="source" type="hidden" value="{{transaction['source']}}">
+                            <input name="destination" type="hidden" value="{{transaction['destination']}}">
+                            <input name="description" type="hidden" value="{{transaction['description']}}">
+                            <input name="amount" type="hidden" value="{{transaction['amount']}}">
+                            <!-- delete button -->
+                            <button formaction="/deletehistory">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+<!-- webpage title shown on tab -->
+{% block title%}Set Goal{% endblock %}
+
+<!-- webpage body main content -->
+{% block main %}
+    <!-- Set goals form -->
+    <form class="submitform" action="/setgoal" method="POST">
+        <!-- goal target amount -->
+        <div>
+            <input class="amount" autocomplete="off" autofocus name="amount" placeholder="Target" type="number" min="0.01" step="0.01">
+        </div>
+        <!-- net worth user wish to be left with after reaching goal -->
+        <div>
+            <input class="amount" autocomplete="off" name="amount_left" placeholder="Remaining Amount" type="number" min="0" step="0.01">
+        </div>
+        <!-- description of goal -->
+        <div>
+            <textarea rows="3" autocomplete="off" name="description" placeholder="Description" type="text"></textarea>
+        </div>
+        <!-- submit form -->
+        <div>
+            <button type="submit">Add Goal</button>
+        </div>
+    </form>
+{% endblock %}

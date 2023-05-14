@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+<!-- webpage title shown on tab -->
+{% block title%}Add Expense{% endblock %}
+
+<!-- webpage body main content -->
+{% block main %}
+    <!-- add expense form -->
+    <form class="submitform" action="/addexpense" method="POST">
+        <!-- source section -->
+        <div>
+            <!-- dropdown menu for source choice (budget, savings) -->
+            <select name="source">
+                <option disabled selected>Select Source</option>
+                <option value="Budget">Budget</option>
+                <option value="Savings">Savings</option>
+            </select>
+        </div>
+        <!-- user input destination of expense (what it was spent on) -->
+        <div>
+            <!-- dropdown menu for destination choice (need/want) -->
+            <select name="destination">
+                <option disabled selected>Select Destination</option>
+                <option value="Need">Need</option>
+                <option value="Want">Want</option>
+            </select>
+        </div>
+        <!-- amount section -->
+        <div>
+            <!-- user input transaction amount -->
+            <input class="amount" autocomplete="off" name="amount" placeholder="Amount" type="number" min="0.01" step="0.01">
+        </div>
+        <!-- description section -->
+        <div>
+            <!-- user input info about addition -->
+            <textarea rows="3" autocomplete="off" name="description" placeholder="Description" type="text"></textarea>
+        </div>
+        <!-- submit button -->
+        <div>
+            <button type="submit">Add Expense</button>
+        </div>
+    </form>
+{% endblock %}

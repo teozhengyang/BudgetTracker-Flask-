@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+<!-- webpage title shown on tab -->
+{% block title%}Add Income{% endblock %}
+
+<!-- webpage body main content -->
+{% block main %}
+    <!-- add net worth form -->
+    <form class="submitform" action="/addincome" method="POST">
+        <!-- source section -->
+        <div>
+            <!-- user input source -->
+            <input style="width:200px;" autocomplete="off" name="source" placeholder="Source" type="text">
+        </div>
+        <!-- destination section -->
+        <div>
+            <!-- dropdown menu for destination choice (budget, savings, investments) -->
+            <select name="destination">
+                <option disabled selected>Select Destination</option>
+                <option value="Budget">Budget</option>
+                <option value="Savings">Savings</option>
+                <option value="Investments">Investments</option>
+            </select>
+        </div>
+        <!-- amount section -->
+        <div>
+            <!-- user input transaction amount -->
+            <input class="amount" autocomplete="off" name="amount" placeholder="Amount" type="number" min="0.01" step="0.01">
+        </div>
+        </div>
+        <!-- description section -->
+        <div>
+            <!-- user input info about addition -->
+            <textarea rows="3" autocomplete="off" name="description" placeholder="Description" type="text"></textarea>
+        </div>
+        <!-- submit button -->
+        <div>
+            <button type="submit">Add Net Worth</button>
+        </div>
+    </form>
+{% endblock %}

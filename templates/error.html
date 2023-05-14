@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+<!-- webpage title shown on tab -->
+{% block title %}Error{% endblock %}
+
+<!-- webpage body main content -->
+{% block main %}
+    <!-- error message -->
+    <img alt="{{ top }}" src="http://memegen.link/custom/{{ top | urlencode}}/{{ bottom | urlencode }}.jpg?alt=https://i.imgflip.com/2pjot2.jpg" title="{{ top }}">
+{% endblock%}

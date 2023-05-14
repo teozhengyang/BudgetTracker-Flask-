@@ -1,0 +1,352 @@
+/* customise body of each page */
+body {
+    min-height: 100vh;
+    position: relative;
+    background-color: seashell;
+}
+
+/* customise content on each page */
+main {
+    min-height: 90vh;
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #fae5df;
+}
+
+
+/* navbar in all webpages */
+
+/* customise navbar design (colour, margin, padding) */
+.navbar ul {
+    margin-bottom: 30px;
+    padding: 10px;
+    overflow: hidden;
+    background-color: seashell;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* customise logo for web app */
+.logo {
+    margin: 5px;
+    padding: 5px;
+    background-color: black;
+    color: seashell;
+    border-radius: 10px;
+    font-family: fantasy;
+}
+
+/* for navbar list to align right */
+.right {
+    float: right;
+}
+
+/* for horizontal navbar */
+.navbar li {
+    display: inline;
+    margin-right: 30px;
+}
+
+/* customise navbar lists (text-align, text-color, text-decoration, padding, display) */
+.navbar li a {
+    text-align: center;
+    color: Dimgrey;
+    text-decoration: None;
+    padding: 20px 20px;
+    outline: None;
+}
+
+/* navbar list change colour when user hover it */
+.navbar li a:hover {
+    background-color: #fae5df;
+    color: Black;
+}
+
+/* buttons in all pages */
+
+/* customise button */
+button {
+    margin: 5px;
+    padding: 3px;
+    border-radius: 10px;
+    background-color: seashell;
+    color: dimgrey;
+    text-align: center;
+}
+/* customise button when hover */
+button:hover {
+    background-color: #fae5df;
+    color: black
+}
+
+/* index */
+
+/* customise index page */
+#index {
+    margin-top: 10px;
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+}
+
+/* customise index tables */
+#index table {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+
+/* customise index head */
+#index thead {
+    border-bottom: 1px solid black;
+}
+
+/* customise text in table head */
+#index th, td {
+    padding: 10px;
+    background-color: #fae5df;
+}
+
+/* customise net worth div */
+.networthdiv {
+    flex: 1;
+    vertical-align: top;
+    float: left;
+    width: 50%;
+    border-right: 0.5px solid dimgrey;
+    margin-bottom: 5px;
+}
+
+/* customise name of div part */
+.networthdiv h5 {
+    margin: 10px;
+    padding: 10px;
+}
+
+/* customise net worth components name */
+.networthcomponents {
+    text-align: left;
+}
+
+/* customise net worth amount */
+.networthamount {
+    text-align: right;
+}
+
+/* customise net worth percentage */
+.networthpercent {
+    text-align: center;
+}
+
+/* customise goals div */
+.goalsdiv {
+    flex: 1;
+    vertical-align: top;
+    float: right;
+    width: 50%;
+}
+
+/* customise goal description */
+.goalsdescription {
+    text-align: left;
+}
+
+/* customise goal amount */
+.goalsamount {
+    text-align: right;
+}
+
+/* login, register, edit profile */
+
+/* customise email and password field in form */
+input {
+    margin: 10px;
+    width: 300px;
+    padding: 5px;
+}
+
+/* customise show password checkbox */
+.showpassword input {
+    width: auto;
+}
+
+/* customise show password label */
+.showpassword label {
+    margin: 0px 20px 0px 0px;
+}
+
+/* customise reminder for new user */
+#loginreminder {
+    margin: 10px;
+    padding: 5px;
+}
+
+
+/* history */
+
+/* customise table name */
+#historytablename {
+    margin-top: 5px;
+}
+
+/* customise table  */
+.history table {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+
+/* customise table head */
+.history th {
+    border: 0.5px solid dimgrey;
+    padding: 0;
+}
+
+/* customise table data */
+.history td {
+    border: 0.5px solid dimgrey;
+    padding: 0;
+    background-color: seashell;
+}
+
+/* customise each row */
+.history tr {
+    background-color: seashell;
+}
+
+
+/* set goals, add net worth, transfer within net worth, add expense */
+
+/* customise submit forms */
+.submitform {
+    padding-top: 150px;
+}
+
+/* customise dropdown menu in form */
+.submitform select {
+    margin: 10px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* customise amount input field in form */
+.amount {
+    margin: 10px;
+    width: 200px;
+    padding: 5px;
+}
+
+/* customise description input field in form */
+.submitform textarea {
+    margin: 10px;
+    width: 300px;
+    padding: 5px;
+}
+
+
+/* customise find out more page */
+#moreinfo {
+    width: 100%;
+}
+
+/* customise answers */
+#moreinfo ul {
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+#moreinfo li {
+    padding-top: 10px;
+    margin-left: 20px;
+}
+
+/* customise top div */
+#moreinfotop {
+    display: flex;
+    height: 250px;
+    border-bottom: 1px solid dimgrey;
+    width: 80%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}
+
+/* customise bottom */
+#moreinfobottom {
+    display: flex;
+    height: 250px;
+    border-top: 1px solid dimgrey;
+    width: 80%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* customise get started div */
+#getstartedsect {
+    flex: 1;
+    border-right: 1px solid dimgrey;
+}
+
+#getstartedsect h5{
+    padding-top: 20px;
+}
+
+/* customise view info div*/
+#viewinfosect {
+    flex: 1;
+    border-right: 1px solid dimgrey;
+}
+
+#viewinfosect h5{
+    padding-top: 20px;
+}
+
+/* customise add info div */
+#addinfosect {
+    flex: 1;
+    border-left: 1px solid black;
+}
+
+#addinfosect h5{
+    padding-top: 20px;
+}
+
+/* customise about div */
+#aboutsect {
+    flex: 1;
+    border-left: 1px solid black;
+}
+
+#aboutsect h5{
+    padding-top: 20px;
+}
+
+
+/* footer */
+
+/* footer text information (position, width, margin, align text, font size and type) */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    font-size: 12px;
+    font-family: Lucida Handwriting, cursive;
+}
+
+

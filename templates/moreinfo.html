@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+<!-- webpage title shown on tab -->
+{% block title%}More Information{% endblock %}
+
+<!-- webpage body main content -->
+{% block main %}
+    <!-- get started div -->
+    <div id="moreinfo">
+        <div id="moreinfoheader">
+            <h2>More Information</h2>
+        </div>
+        <div id="moreinfotop">
+            <div id="getstartedsect">
+                <h5>Get Started</h5>
+                <ul>
+                <li>Register an account using your email and a password of your choice</li>
+                <li>An confirmation email will be sent to you upon successful registration</li>
+                <li>Log in to get started</li>
+                </ul>
+            </div>
+            <div id="addinfosect">
+                <h5>Add Information</h5>
+                <ul>
+                <li>Add income under <a href="/addincome">Add Income</a></li>
+                <li>Add transfer within net worth components at <a href="/addtransfer">Add Transfer</a></li>
+                <li>Add your expenses under <a href="/addexpense">'Add Expense'</a></li>
+                <li>Add any goals you want to achieve under <a href="/setgoal">Set Goal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="moreinfobottom">
+            <div id="viewinfosect">
+                <h5>View Information</h5>
+                <ul>
+                <li>Net worth and goals information will be under <a href="/">Home</a></li>
+                <li>All transactions added can be seen under <a href="/history">History</a></li>
+                </ul>
+            </div>
+            <div id="aboutsect">
+                <h5>About App and Me</h5>
+                <ul>
+                <li>Simple budget tracker app created by myself for my CS50x Final Project</li>
+                <li>First web app I have created and I look to add more details eg investment tracker</li>
+                <li>For more info, email me at zybudgettracker@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

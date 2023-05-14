@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+<!-- webpage title shown on tab -->
+{% block title%}Log In{% endblock %}
+
+<!-- webpage body main content -->
+{% block main %}
+    <!-- form to input username and password -->
+    <form class="submitform" action="/login" method="POST">
+        <h2 class="welcometext">Hi There!</h2>
+        <!-- input email -->
+        <div>
+            <input autocomplete="off" autofocus name="email" placeholder="Email" type="email" size="30">
+        </div>
+        <!-- input password -->
+        <div>
+            <input autocomplete="off" name="password" placeholder="Password" type="password" id="password">
+        </div>
+        <!-- input whether to show password -->
+        <div class="showpassword">
+            <input type="checkbox" id="showpassword"><label>Show Password</label>
+        </div>
+        <!-- submit button -->
+        <div>
+            <button type="submit">Log In</button>
+        </div>
+    <p id="loginreminder">Please <a href="/register">register</a> for a new account if you are a new user!</p>
+    </form>
+    <!-- JavaScript to toggle password visibility -->
+    <script>
+        function show()
+        {
+            let password = document.querySelector('#password');
+            if (password.type === "password")
+            {
+                password.type = "text";
+            }
+            else
+            {
+                password.type = "password";
+            }
+        }
+        document.querySelector('#showpassword').addEventListener('click', show);
+    </script>
+{% endblock%}

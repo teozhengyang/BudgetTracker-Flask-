@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+<!-- webpage title shown on tab -->
+{% block title%}Edit Profile{% endblock %}
+
+<!-- webpage body main content -->
+{% block main %}
+    <!-- change password form -->
+    <form class="submitform" action="/editprofile" method="POST">
+        <!-- input password -->
+        <div>
+            <input autocomplete="off" name="password" placeholder="New Password" type="password" id="password">
+        </div>
+        <!-- input password again(confirmation) -->
+        <div>
+            <input autocomplete="off" name="confirmation" placeholder="Confirm New Password" type="password" id="confirmation">
+        </div>
+        <!-- input whether to show password -->
+        <div class="showpassword">
+            <input type="checkbox" id="showpassword"><label>Show Password</label>
+        </div>
+        <!-- submit button -->
+        <div>
+            <button type="submit">Change Password</button>
+        </div>
+    </form>
+    <!-- JavaScript to toggle password visibility -->
+    <script>
+        function show()
+        {
+            let password = document.querySelector('#password');
+            if (password.type === "password")
+            {
+                password.type = "text";
+            }
+            else
+            {
+                password.type = "password";
+            }
+            let confirmation = document.querySelector('#confirmation');
+            if (confirmation.type === "password")
+            {
+                confirmation.type = "text";
+            }
+            else
+            {
+                confirmation.type = "password";
+            }
+        }
+        document.querySelector('#showpassword').addEventListener('click', show);
+    </script>
+{% endblock %}
